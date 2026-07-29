@@ -1,0 +1,38 @@
+[
+    {
+        "texto": "¿Qué componente es considerado el cerebro de la computadora encargado de procesar los datos?",
+        "opciones": ["Memoria RAM", "Procesador (CPU)", "Disco Rígido"],
+        "correcta": 1,
+        "explicacion": "La CPU (Unidad Central de Procesamiento) ejecuta todas las instrucciones y cálculos del sistema."
+    },
+    {
+        "texto": "¿Qué tipo de memoria es volátil y pierde su información al apagar la computadora?",
+        "opciones": ["Memoria RAM", "Disco SSD", "Memoria ROM"],
+        "correcta": 0,
+        "explicacion": "La memoria RAM guarda temporalmente los datos de los programas en ejecución mientras la PC está encendida."
+    },
+    {
+        "texto": "¿Qué puerto es el estándar actual para conectar monitores de alta definición y pantallas?",
+        "opciones": ["Puerto HDMI", "Puerto USB-A", "Puerto de Red RJ45"],
+        "correcta": 0,
+        "explicacion": "El puerto HDMI transmite audio y video digital de alta definición en un solo cable."
+    },
+    {
+        "texto": "¿Cuál de los siguientes es un sistema operativo para computadoras?",
+        "opciones": ["Linux", "Python", "Google Chrome"],
+        "correcta": 0,
+        "explicacion": "Linux es un sistema operativo libre y de código abierto utilizado en servidores y PC."
+    },
+    {
+        "texto": "¿Qué dispositivo se encarga de proveer energía eléctrica a todos los componentes de la PC?",
+        "opciones": ["Fuente de Alimentación", "Placa Madre", "Tarjeta de Video"],
+        "correcta": 0,
+        "explicacion": "La fuente de alimentación convierte la corriente alterna de la red en corriente continua para la PC."
+    },
+    {
+        "texto": "¿Cuál de los siguientes dispositivos se utiliza como almacenamiento secundario de alta velocidad?",
+        "opciones": ["Disco SSD", "Placa de Red", "Memoria Caché"],
+        "correcta": 0,
+        "explicacion": "Los discos de estado sólido (SSD) leen y escriben datos mucho más rápido que los discos rígidos tradicionales."
+    }
+]

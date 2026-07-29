@@ -1,0 +1,65 @@
+#:import os os
+
+#:set formatos_texto (".txt",)
+#:set formatos_imagen (".jpg", ".jpeg", ".png")
+#:set filtros ["*.txt", "*.TXT", "*.jpg", "*.jpeg", "*.png", "*.JPG", "*.JPEG", "*.PNG"]
+
+BoxLayout:
+    orientation: "vertical"
+    padding: 12
+    spacing: 8
+
+    Label:
+        text: "FileChooser: abrir textos e imágenes"
+        font_size: 22
+        bold: True
+        size_hint_y: None
+        height: 45
+
+    Label:
+        id: estado
+        text: "Seleccioná un archivo .txt, .jpg, .jpeg o .png"
+        size_hint_y: None
+        height: 35
+
+    FileChooserListView:
+        id: filechooser
+        path: os.path.expanduser("~")
+        filters: filtros
+
+    Button:
+        text: "Abrir archivo seleccionado"
+        size_hint_y: None
+        height: 50
+
+        on_release:
+            estado.text = "No seleccionaste ningún archivo." if not filechooser.selection else "Archivo seleccionado."
+            contenido.text = open(filechooser.selection[0], "r", encoding="utf-8", errors="replace").read() if filechooser.selection and filechooser.selection[0].lower().endswith(formatos_texto) else ""
+            visor.source = filechooser.selection[0] if filechooser.selection and filechooser.selection[0].lower().endswith(formatos_imagen) else ""
+            visor.reload()
+            estado.text = "Texto cargado correctamente." if filechooser.selection and filechooser.selection[0].lower().endswith(formatos_texto) else estado.text
+            estado.text = "Imagen cargada correctamente." if filechooser.selection and filechooser.selection[0].lower().endswith(formatos_imagen) else estado.text
+            estado.text = "Formato no permitido." if filechooser.selection and not filechooser.selection[0].lower().endswith(formatos_texto + formatos_imagen) else estado.text
+
+    Label:
+        text: "Vista previa del texto:"
+        size_hint_y: None
+        height: 30
+
+    TextInput:
+        id: contenido
+        text: ""
+        readonly: True
+        multiline: True
+        size_hint_y: 0.35
+
+    Label:
+        text: "Vista previa de imagen:"
+        size_hint_y: None
+        height: 30
+
+    Image:
+        id: visor
+        source: ""
+        fit_mode: "contain"
+        opacity: 1 if self.source else 0
