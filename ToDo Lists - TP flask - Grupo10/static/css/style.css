@@ -1,0 +1,346 @@
+/* ----------------------------------------------------
+   SISTEMA DE DISEÑO - TASKFLOW (TP GRUPO 10)
+---------------------------------------------------- */
+
+:root {
+    --primary-color: #6366f1; /* Índigo */
+    --primary-gradient-start: #7c3aed; /* Violeta */
+    --primary-gradient-end: #4f46e5; /* Índigo Oscuro */
+    
+    --bg-main: #f8fafc; /* Gris azulado muy claro */
+    --bg-card: #ffffff;
+    --text-primary: #1e293b; /* Slate 800 */
+    --text-secondary: #64748b; /* Slate 500 */
+    --text-muted: #94a3b8; /* Slate 400 */
+    
+    /* Colores semánticos con opacidad para fondos */
+    --danger-bg: #fef2f2;
+    --danger-text: #ef4444;
+    --danger-border: #fecaca;
+    
+    --warning-bg: #fffbeb;
+    --warning-text: #d97706;
+    --warning-border: #fde68a;
+    
+    --info-bg: #f0fdf4; /* Verde muy claro para éxito, azul para info */
+    --info-text: #16a34a;
+    --info-border: #bbf7d0;
+
+    --blue-bg: #eff6ff;
+    --blue-text: #3b82f6;
+    --blue-border: #bfdbfe;
+    
+    --purple-bg: #f5f3ff;
+    --purple-text: #8b5cf6;
+}
+
+/* ----------------------------------------------------
+   ESTILOS GENERALES Y TIPOGRAFÍA
+---------------------------------------------------- */
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* ----------------------------------------------------
+   NAVBAR PREMIUM
+---------------------------------------------------- */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    padding: 0.8rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--text-primary) !important;
+}
+
+.brand-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
+}
+
+.brand-sub {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: -3px;
+}
+
+.bg-purple-glow {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--primary-gradient-start);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+}
+
+/* ----------------------------------------------------
+   BOTONES PERSONALIZADOS
+---------------------------------------------------- */
+.btn-primary-gradient {
+    background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+    border-radius: 10px;
+}
+
+.btn-primary-gradient:hover {
+    background: linear-gradient(135deg, #6d28d9, #4338ca);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+}
+
+.btn-action-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+}
+
+.btn-outline-edit {
+    color: var(--text-secondary);
+}
+
+.btn-outline-edit:hover {
+    background-color: var(--blue-bg);
+    color: var(--blue-text);
+    border-color: var(--blue-border);
+}
+
+.btn-outline-delete {
+    color: var(--text-secondary);
+}
+
+.btn-outline-delete:hover {
+    background-color: var(--danger-bg);
+    color: var(--danger-text);
+    border-color: var(--danger-border);
+}
+
+/* ----------------------------------------------------
+   TARJETAS Y CONTENEDORES (STATS / FORMS)
+---------------------------------------------------- */
+.card-stat {
+    border-radius: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-stat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05) !important;
+}
+
+.bg-gradient-purple {
+    background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.bg-light-orange {
+    background-color: #fffbeb;
+}
+
+.bg-light-success {
+    background-color: #f0fdf4;
+}
+
+.card-form {
+    border-radius: 16px;
+    background-color: var(--bg-card);
+}
+
+.sticky-form {
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .sticky-form {
+        position: sticky;
+        top: 90px;
+    }
+}
+
+.bg-light-panel {
+    background-color: #f1f5f9 !important;
+    border-radius: 14px;
+}
+
+/* Inputs de Formulario */
+.form-control, .form-select {
+    border-radius: 10px;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* ----------------------------------------------------
+   TARJETAS DE TAREAS (TASK CARDS)
+---------------------------------------------------- */
+.task-card {
+    border-radius: 14px;
+    transition: all 0.25s ease;
+    border-left: 4px solid var(--text-muted) !important; /* Por defecto */
+    position: relative;
+    overflow: hidden;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Variar color de borde izquierdo según Prioridad */
+.task-card:has(.bg-light-danger) {
+    border-left: 4px solid var(--danger-text) !important;
+}
+
+.task-card:has(.bg-light-warning) {
+    border-left: 4px solid var(--warning-text) !important;
+}
+
+.task-card:has(.bg-light-info) {
+    border-left: 4px solid var(--blue-text) !important;
+}
+
+/* Tareas Completadas */
+.task-completed-card {
+    border-left: 4px solid var(--info-text) !important;
+    background-color: #f8fafc;
+}
+
+/* Checkbox Interactivo */
+.btn-check-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-check-toggle:hover {
+    transform: scale(1.1);
+}
+
+.btn-check-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Badges de Estado */
+.badge {
+    font-weight: 500;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+}
+
+.bg-light-danger {
+    background-color: var(--danger-bg);
+    color: var(--danger-text);
+}
+
+.bg-light-warning {
+    background-color: var(--warning-bg);
+    color: var(--warning-text);
+}
+
+.bg-light-info {
+    background-color: var(--blue-bg);
+    color: var(--blue-text);
+}
+
+.bg-light-purple {
+    background-color: var(--purple-bg);
+    color: var(--purple-text);
+}
+
+/* Tipografía de las tareas */
+.task-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.task-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ----------------------------------------------------
+   ALERTAS FLASH PERSONALIZADAS
+---------------------------------------------------- */
+.flash-messages-container {
+    position: relative;
+    z-index: 1050;
+    margin-bottom: 1.5rem;
+}
+
+.flash-messages-container .alert {
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+}
+
+/* ----------------------------------------------------
+   ESTADO VACÍO (EMPTY STATE)
+---------------------------------------------------- */
+.empty-state-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #f1f5f9;
+    border-radius: 50%;
+    color: var(--text-muted);
+}
+
+.text-purple-glow-muted {
+    background-color: rgba(124, 58, 237, 0.05);
+    color: rgba(124, 58, 237, 0.4);
+}
+
+/* ----------------------------------------------------
+   PIE DE PÁGINA (FOOTER)
+---------------------------------------------------- */
+.footer {
+    background-color: #ffffff;
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
+    margin-top: auto;
+}
