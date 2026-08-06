@@ -1,0 +1,5 @@
+# Ignorar variables de entorno privadas
+.env
+
+# Ignorar perfil biométrico guardado
+voice_profile.npy
