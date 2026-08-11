@@ -92,6 +92,7 @@ except ImportError:
 # Importación de Resemblyzer para Biometría de Voz
 HAS_RESEMBLYZER = False
 try:
+    # pyrefly: ignore [missing-import]
     from resemblyzer import VoiceEncoder, preprocess_wav
     HAS_RESEMBLYZER = True
 except ImportError:
